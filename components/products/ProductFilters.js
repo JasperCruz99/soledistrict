@@ -1,5 +1,6 @@
 "use client";
 
+import { Check } from "lucide-react";
 import { cn } from "@/lib/utils";
 import {
   allColors,
@@ -23,6 +24,29 @@ function FilterGroup({ legend, children }) {
       </legend>
       <div className="mt-3">{children}</div>
     </fieldset>
+  );
+}
+
+function CheckboxMark({ checked, className }) {
+  return (
+    <span
+      aria-hidden="true"
+      className={cn(
+        "pointer-events-none grid size-4 shrink-0 place-items-center border transition-colors duration-150",
+        checked
+          ? "border-foreground bg-foreground text-white"
+          : "border-foreground/30 bg-surface group-hover/filter:border-foreground",
+        className
+      )}
+    >
+      <Check
+        className={cn(
+          "size-3 transition-opacity duration-150",
+          checked ? "opacity-100" : "opacity-0"
+        )}
+        strokeWidth={3}
+      />
+    </span>
   );
 }
 
@@ -71,7 +95,7 @@ export default function ProductFilters({
             {categories.map((category) => (
               <label
                 key={category.slug}
-                className="flex cursor-pointer items-center gap-2.5 py-1.5 text-sm text-muted transition-colors hover:text-foreground"
+                className="group/filter relative flex cursor-pointer items-center gap-2.5 py-1.5 text-sm text-muted transition-colors has-[:focus-visible]:outline has-[:focus-visible]:outline-2 has-[:focus-visible]:outline-offset-2 has-[:focus-visible]:outline-foreground hover:text-foreground"
               >
                 <input
                   type="checkbox"
@@ -86,7 +110,10 @@ export default function ProductFilters({
                       ),
                     })
                   }
-                  className="size-4 shrink-0 accent-foreground"
+                  className="peer absolute left-0 top-1/2 z-10 size-4 -translate-y-1/2 cursor-pointer appearance-none opacity-0"
+                />
+                <CheckboxMark
+                  checked={filters.categories.includes(category.name)}
                 />
                 <span className="flex-1">{category.name}</span>
                 <span className="text-[11px] tabular-nums text-muted/70" aria-hidden="true">
@@ -102,7 +129,7 @@ export default function ProductFilters({
             {brands.map((brand) => (
               <label
                 key={brand}
-                className="flex cursor-pointer items-center gap-2.5 py-1.5 text-sm text-muted transition-colors hover:text-foreground"
+                className="group/filter relative flex cursor-pointer items-center gap-2.5 py-1.5 text-sm text-muted transition-colors has-[:focus-visible]:outline has-[:focus-visible]:outline-2 has-[:focus-visible]:outline-offset-2 has-[:focus-visible]:outline-foreground hover:text-foreground"
               >
                 <input
                   type="checkbox"
@@ -112,8 +139,9 @@ export default function ProductFilters({
                   onChange={() =>
                     update({ brands: toggleValue(filters.brands, brand) })
                   }
-                  className="size-4 shrink-0 accent-foreground"
+                  className="peer absolute left-0 top-1/2 z-10 size-4 -translate-y-1/2 cursor-pointer appearance-none opacity-0"
                 />
+                <CheckboxMark checked={filters.brands.includes(brand)} />
                 <span className="flex-1">{brand}</span>
                 <span className="text-[11px] tabular-nums text-muted/70" aria-hidden="true">
                   {countByBrand(brand)}
@@ -206,7 +234,7 @@ export default function ProductFilters({
             {allColors.map((color) => (
               <label
                 key={color.name}
-                className="flex cursor-pointer items-center gap-2 rounded-sm py-1.5 text-xs text-muted transition-colors hover:text-foreground has-[:focus-visible]:outline has-[:focus-visible]:outline-2 has-[:focus-visible]:outline-offset-2 has-[:focus-visible]:outline-foreground"
+                className="relative flex cursor-pointer items-center gap-2 rounded-sm py-1.5 text-xs text-muted transition-colors hover:text-foreground has-[:focus-visible]:outline has-[:focus-visible]:outline-2 has-[:focus-visible]:outline-offset-2 has-[:focus-visible]:outline-foreground"
               >
                 <input
                   type="checkbox"
@@ -216,7 +244,7 @@ export default function ProductFilters({
                   onChange={() =>
                     update({ colors: toggleValue(filters.colors, color.name) })
                   }
-                  className="sr-only"
+                  className="peer absolute left-0 top-1/2 z-10 size-4 -translate-y-1/2 cursor-pointer appearance-none opacity-0"
                 />
                 <span
                   className={cn(
@@ -242,13 +270,14 @@ export default function ProductFilters({
         </FilterGroup>
 
         <FilterGroup legend="Availability">
-          <label className="flex cursor-pointer items-start gap-2.5 py-1 text-sm text-muted transition-colors hover:text-foreground">
+          <label className="group/filter relative flex cursor-pointer items-start gap-2.5 py-1 text-sm text-muted transition-colors has-[:focus-visible]:outline has-[:focus-visible]:outline-2 has-[:focus-visible]:outline-offset-2 has-[:focus-visible]:outline-foreground hover:text-foreground">
             <input
               type="checkbox"
               checked={filters.inStock}
               onChange={(event) => update({ inStock: event.target.checked })}
-              className="mt-0.5 size-4 shrink-0 accent-foreground"
+              className="peer absolute left-0 top-1/2 z-10 size-4 -translate-y-1/2 cursor-pointer appearance-none opacity-0"
             />
+            <CheckboxMark checked={filters.inStock} className="mt-0.5" />
             <span>
               In stock only
               <span className="mt-0.5 block text-[11px] text-muted/80">
@@ -265,4 +294,3 @@ export default function ProductFilters({
     </div>
   );
 }
-
