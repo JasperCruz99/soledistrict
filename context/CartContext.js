@@ -59,8 +59,9 @@ export function CartProvider({ children }) {
   const hydrated = useHydrated();
   const [drawerOpen, setDrawerOpen] = useState(false);
 
-  const addItem = useCallback((entry, quantity = 1) => {
-    const amount = Math.max(1, Math.min(MAX_QUANTITY, Number(quantity) || 1));
+  const addItem = useCallback((entry, quantity) => {
+    const requested = quantity ?? entry.quantity ?? 1;
+    const amount = Math.max(1, Math.min(MAX_QUANTITY, Number(requested) || 1));
     const key = makeCartKey(entry.productId, entry.size, entry.color);
 
     cartStore.set((current) => {
