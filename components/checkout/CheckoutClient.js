@@ -173,7 +173,7 @@ function SelectField({ id, label, error, children, className = "", ...selectProp
 }
 
 function StepIndicator({ current }) {
-  const steps = ["Details", "Review", "Confirmation"];
+  const steps = ["Details", "Review", "Confirm"];
 
   return (
     <ol
@@ -542,7 +542,7 @@ export default function CheckoutClient() {
                   </div>
                 </fieldset>
 
-                <div className="mt-5 flex flex-col-reverse gap-2 sm:flex-row sm:items-center sm:justify-between">
+                <div className="mt-5 flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
                   <Link href="/cart" className="btn btn-outline w-full sm:w-auto">
                     <ArrowLeft className="size-4" aria-hidden="true" />
                     Back to bag
@@ -642,7 +642,7 @@ export default function CheckoutClient() {
                   ) : null}
                 </div>
 
-                <div className="mt-5 flex flex-col-reverse gap-2 sm:flex-row sm:items-center sm:justify-between">
+                <div className="mt-5 flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
                   <button
                     type="button"
                     onClick={handleEditDetails}
