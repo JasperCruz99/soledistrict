@@ -9,7 +9,7 @@ import { useToast } from "@/context/ToastContext";
 import { buildCartItem } from "@/lib/cart";
 import { cn, formatPrice } from "@/lib/utils";
 
-export default function QuickAddModal({ product, onClose }) {
+export default function QuickAddModal({ product, onClose, onAdded }) {
   const { addItem } = useCart();
   const { addToast } = useToast();
   const [size, setSize] = useState(null);
@@ -31,6 +31,7 @@ export default function QuickAddModal({ product, onClose }) {
     addItem(buildCartItem(product, { size, color, quantity: 1 }));
     setError("");
     onClose();
+    onAdded?.(product);
     addToast({
       title: "Added to your bag",
       description: `${product.name} — ${size != null ? `US ${size}, ` : ""}${color}`,
