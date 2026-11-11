@@ -12,6 +12,13 @@
 
 # testing
 /coverage
+/test-results
+/playwright-report
+
+# local logs
+dev-server.log
+dev-server-error.log
+*.pid
 
 # next.js
 /.next/

@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" role="img" aria-label="Sneaker image unavailable">
+  <rect width="800" height="1000" fill="#EFEEE9"/>
+  <rect x="28" y="28" width="744" height="944" fill="none" stroke="#D8D6CE" stroke-width="2"/>
+  <g fill="none" stroke="#171717" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" transform="translate(0 20)">
+    <path d="M175 610 L175 505 Q178 468 205 458 L252 442 L300 360 Q318 330 355 337 L420 352 L462 438 L540 492 Q595 525 628 545 Q658 565 654 610 Z"/>
+    <path d="M300 360 L355 445 L462 438"/>
+    <path d="M362 350 L402 435"/>
+    <path d="M405 428 L452 420"/>
+    <path d="M420 415 L462 405"/>
+    <path d="M470 460 L505 495"/>
+    <path d="M160 610 L666 610 Q692 610 692 638 L692 660 Q692 688 664 688 L188 688 Q160 688 160 660 L160 610 Z" fill="#171717" stroke="none"/>
+    <path d="M205 458 L295 445 L310 500 L230 520 Z" fill="#D9FF43" stroke="none"/>
+  </g>
+  <g fill="#737373" font-family="Arial, Helvetica, sans-serif" text-anchor="middle">
+    <text x="400" y="790" font-size="20" letter-spacing="8">SOLEDISTRICT</text>
+    <text x="400" y="822" font-size="13" letter-spacing="3">IMAGE UNAVAILABLE</text>
+  </g>
+</svg>
