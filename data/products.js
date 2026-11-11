@@ -325,7 +325,7 @@ export const products = [
     category: "Lifestyle Sneakers",
     description:
       "Our most-wanted silhouette. The Signal Max blends a layered runner upper with visible cushioning and hits of signal orange — a future classic that looks as good as it feels.",
-    images: ["/images/signal-max-1.jpg", "/images/brand-story.jpg"],
+    images: ["/images/signal-max-1.jpg", "/images/hero-street.jpg"],
     sizes: standardSizes,
     colors: [
       { name: "Bone / Orange", hex: "#E8CDB0" },
@@ -601,3 +601,4 @@ export function getFeaturedProducts(limit = 4) {
     })
     .slice(0, limit);
 }
+
