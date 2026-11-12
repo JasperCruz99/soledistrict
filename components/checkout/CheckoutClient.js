@@ -635,6 +635,23 @@ export default function CheckoutClient() {
                       trigger shipping.
                     </span>
                   </label>
+                  <p className="mt-2 pl-7 text-[10px] leading-relaxed text-muted">
+                    Read the{" "}
+                    <Link
+                      href="/policies/terms"
+                      className="font-medium text-foreground underline underline-offset-2"
+                    >
+                      sample terms
+                    </Link>{" "}
+                    and{" "}
+                    <Link
+                      href="/policies/privacy"
+                      className="font-medium text-foreground underline underline-offset-2"
+                    >
+                      privacy policy
+                    </Link>
+                    .
+                  </p>
                   {ackError ? (
                     <p role="alert" className="mt-3 text-[11px] font-medium text-error">
                       {ackError}

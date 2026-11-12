@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import Link from "next/link";
 import { ArrowRight, Check, Loader2 } from "lucide-react";
 import { isValidEmail } from "@/lib/utils";
 
@@ -107,8 +108,14 @@ export default function NewsletterForm() {
         </div>
 
         <p id="newsletter-note" className="mt-1 text-[10px] leading-relaxed text-foreground/55">
-          Demo form only. No stored data, no recurring emails. Unsubscribe
-          anytime in a real store.
+          Demo form only. No stored data, no recurring emails. Read the{" "}
+          <Link
+            href="/policies/privacy"
+            className="font-medium text-foreground underline underline-offset-2"
+          >
+            privacy policy
+          </Link>
+          .
         </p>
       </form>
     </div>

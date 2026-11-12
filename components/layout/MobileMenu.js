@@ -25,6 +25,13 @@ const links = [
   { label: "About", href: "/about" },
 ];
 
+const supportLinks = [
+  { label: "Contact", href: "/contact" },
+  { label: "FAQ", href: "/about#faq" },
+  { label: "Shipping & returns", href: "/about#shipping-returns" },
+  { label: "Size guide", href: "/about#size-guide" },
+];
+
 export default function MobileMenu({
   onClose,
   onSearch,
@@ -130,7 +137,25 @@ export default function MobileMenu({
           </button>
         </div>
 
-        <div className="mt-9 flex items-center justify-between border-t border-border pt-5 text-[10px] font-medium uppercase tracking-[0.14em] text-muted">
+        <div className="mt-8 border-t border-border pt-5">
+          <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-muted">
+            Support
+          </p>
+          <nav aria-label="Support links" className="mt-3 grid grid-cols-2 gap-2">
+            {supportLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                onClick={onClose}
+                className="border border-border bg-surface px-3.5 py-3 text-[10px] font-semibold uppercase tracking-[0.1em] transition-colors hover:border-foreground"
+              >
+                {link.label}
+              </Link>
+            ))}
+          </nav>
+        </div>
+
+        <div className="mt-8 flex items-center justify-between border-t border-border pt-5 text-[10px] font-medium uppercase tracking-[0.14em] text-muted">
           <span>Free shipping over $100</span>
           <span>Est. 2026</span>
         </div>

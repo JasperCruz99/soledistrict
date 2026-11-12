@@ -19,13 +19,20 @@ const supportLinks = [
   { label: "Shipping & Returns", href: "/about#shipping-returns" },
   { label: "Size Guide", href: "/about#size-guide" },
   { label: "FAQ", href: "/about#faq" },
-  { label: "Contact", href: "mailto:hello@soledistrict.com" },
+  { label: "Contact", href: "/contact" },
 ];
 
 const aboutLinks = [
   { label: "Our Story", href: "/about" },
   { label: "Our Values", href: "/about#values" },
   { label: "The Newsletter", href: "/#newsletter" },
+  { label: "Store Policies", href: "/policies" },
+];
+
+const legalLinks = [
+  { label: "Privacy", href: "/policies/privacy" },
+  { label: "Terms", href: "/policies/terms" },
+  { label: "Accessibility", href: "/policies/accessibility" },
 ];
 
 const socials = [
@@ -144,8 +151,21 @@ export default function Footer() {
           </p>
         </div>
 
-        <div className="flex flex-col gap-2 pt-6 text-[11px] text-white/40 sm:flex-row sm:items-center sm:justify-between">
-          <p>© 2026 SoleDistrict. All rights reserved.</p>
+        <div className="flex flex-col gap-4 pt-6 text-[11px] text-white/40 sm:flex-row sm:items-center sm:justify-between">
+          <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
+            <p>© 2026 SoleDistrict. All rights reserved.</p>
+            <nav aria-label="Legal" className="flex flex-wrap items-center gap-x-3 gap-y-1">
+              {legalLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="text-white/60 transition-colors hover:text-white"
+                >
+                  {link.label}
+                </Link>
+              ))}
+            </nav>
+          </div>
           <p>Independent by design. Built for the next step.</p>
         </div>
       </div>

@@ -295,6 +295,37 @@ export default function ProductPurchasePanel({ product }) {
             </p>
           </div>
         </details>
+
+        <details className="group border-b border-border py-4 [&[open]_summary_svg]:rotate-180">
+          <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-[10px] font-semibold uppercase tracking-[0.14em] [&::-webkit-details-marker]:hidden">
+            Care &amp; materials
+            <ChevronDown
+              className="size-4 text-muted transition-transform duration-300"
+              aria-hidden="true"
+            />
+          </summary>
+          <div className="mt-3 space-y-3 text-sm leading-relaxed text-muted">
+            <p>
+              Materials vary by silhouette. Treat the upper according to its
+              finish: use a soft brush for mesh and canvas, and a damp cloth for
+              leather or synthetic panels.
+            </p>
+            <ul className="space-y-1.5 pl-4 marker:text-border">
+              <li className="list-disc">
+                Brush off loose dirt before applying any cleaner.
+              </li>
+              <li className="list-disc">
+                Air-dry at room temperature; keep pairs away from direct heat.
+              </li>
+              <li className="list-disc">
+                Do not machine wash or tumble dry. Store in a cool, dry place.
+              </li>
+              <li className="list-disc">
+                Test any care product on a small, hidden area first.
+              </li>
+            </ul>
+          </div>
+        </details>
       </div>
 
       <SizeGuideModal

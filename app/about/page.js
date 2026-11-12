@@ -92,7 +92,7 @@ const faqs = [
   {
     question: "How can I get in touch?",
     answer:
-      "For questions about this demo project, email hello@soledistrict.com. For a real store, this is where you would also find order support, returns help, and wholesale enquiries.",
+      "Use the contact page for sample support hours, response expectations, and the demo message form. For a real store, this is also where you would find order support, returns help, and wholesale enquiries.",
   },
 ];
 
@@ -476,17 +476,17 @@ export default function AboutPage() {
               <div>
                 <p className="text-sm font-medium">Still have a question?</p>
                 <p className="mt-1 text-xs leading-relaxed text-muted">
-                  The inbox is fictional, but the form is real. Send a note to
-                  the demo support address.
+                  Visit the contact page for sample support hours, response
+                  expectations, and the demo message form.
                 </p>
               </div>
             </div>
-            <a
-              href="mailto:hello@soledistrict.com"
+            <Link
+              href="/contact"
               className="btn btn-outline w-full shrink-0 sm:w-auto"
             >
-              Email us
-            </a>
+              Contact us
+            </Link>
           </div>
         </div>
       </section>

@@ -44,6 +44,11 @@ npm run start
 | `/cart` | Cart management, sample discount code, and order summary |
 | `/checkout` | Frontend-only checkout with validation, review step, and demo confirmation |
 | `/about` | Brand story, values, shipping and returns, size guide, and FAQ |
+| `/contact` | Support details, common questions, and a demo contact form |
+| `/policies` | Policy centre linking privacy, terms, accessibility, and support |
+| `/policies/privacy` | Sample privacy policy and local-storage disclosure |
+| `/policies/terms` | Sample terms for the fictional demo storefront |
+| `/policies/accessibility` | Accessibility practices, limitations, and feedback |
 
 ## Sample commerce rules
 
@@ -65,6 +70,9 @@ npm run start
 - Sample reviews clearly labeled as illustrative
 - Checkout field validation and accessible error messages
 - Frontend demo confirmation without payment collection
+- Contact form with validation and explicit demo messaging
+- Privacy, terms, accessibility, and support policy pages
+- Product care and materials guidance
 - Reduced-motion support and keyboard-accessible controls
 - Local image fallback handling
 
